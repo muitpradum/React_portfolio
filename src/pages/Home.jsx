@@ -53,6 +53,7 @@ function Home() {
               <a
                 href="`{${import.meta.env.BASE_URL}Resume%20(3).pdf`}"
                 download="Pradum_Sonkar_Resume.pdf"
+                rel="noopener noreferrer"
                 className="flex items-center text-black gap-2 border border-gray-600 hover:border-blue-500 hover:text-blue-400 px-6 py-3 rounded-lg font-semibold transition"
               >
                 <FiDownload size={20} />
