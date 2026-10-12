@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { FiDownload, FiArrowRight } from "react-icons/fi";
 import image from '../assets/pradum.png'
@@ -42,17 +42,17 @@ function Home() {
             {/* Buttons */}
             <div className="flex flex-wrap gap-4">
 
-              <a
-                href="/projects"
+              <Link
+                to="/projects"
                 className="flex items-center gap-2 bg-blue-900 hover:bg-gray-700 px-6 py-3 rounded-lg font-semibold transition"
               >
                 View Projects
                 <FiArrowRight size={20} />
-              </a>
+              </Link>
 
               <a
-                href="/Resume (3).pdf"
-                download
+                href="`{${import.meta.env.BASE_URL}Resume%20(3).pdf`}"
+                download="Pradum_Sonkar_Resume.pdf"
                 className="flex items-center text-black gap-2 border border-gray-600 hover:border-blue-500 hover:text-blue-400 px-6 py-3 rounded-lg font-semibold transition"
               >
                 <FiDownload size={20} />
@@ -64,30 +64,30 @@ function Home() {
             {/* Social Links */}
             <div className="flex gap-5 mt-8">
 
-              <a
-                href="https://github.com/"
+              <Link
+                to="https://github.com/"
                 target="_blank"
                 rel="noreferrer"
                 className="hover:text-blue-400 transition"
               >
                 <FaGithub size={27} />
-              </a>
+              </Link>
 
-              <a
-                href="https://linkedin.com/in/pradumsonkar/"
+              <Link
+                to="https://linkedin.com/in/pradumsonkar/"
                 target="_blank"
                 rel="noreferrer"
                 className="hover:text-blue-400 transition"
               >
                 <FaLinkedin size={27} />
-              </a>
+              </Link>
 
-              <a
-                href="mailto:pradumsonkar3@gmail.com"
+              <Link
+                to="mailto:pradumsonkar3@gmail.com"
                 className="hover:text-blue-400 transition"
               >
                 <FaEnvelope size={27} />
-              </a>
+              </Link>
 
             </div>
 

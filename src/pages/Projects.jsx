@@ -231,7 +231,7 @@ function Projects() {
               {/* Image */}
               {project.image ? (
                 <img
-                  src={project.image}
+                  src={`http://localhost:5000${project.image}`}
                   alt={project.title}
                   className="w-full h-58 object-cover"
                 />
