@@ -19,7 +19,7 @@ function App() {
   return (
     <>
      
-      <BrowserRouter>
+      <BrowserRouter basename="/React_portfolio">
       <Navbar/>
         <Routes>
           <Route path="/" element={<Home />} />

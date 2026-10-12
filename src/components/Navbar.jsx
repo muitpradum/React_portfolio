@@ -14,32 +14,32 @@ function Navbar() {
             <span>Pradum Sonkar</span>
           </div>
 
-            <div class=" hover:text-violet-600">
+            <div className=" hover:text-violet-600">
             <Link to="/"  >
               Home
             </Link></div>
 
-            <div class=" hover:text-violet-600">
+            <div className=" hover:text-violet-600">
             <Link to="/about" >
               About
             </Link></div>
 
-            <div class="hover:text-violet-600">
+            <div className="hover:text-violet-600">
             <Link to="/skills" >
               Skills
             </Link></div>
 
-            <div class=" hover:text-violet-600">
+            <div className=" hover:text-violet-600">
             <Link to="/projects" >
               Projects
             </Link></div>
 
-            <div class=" hover:text-violet-600">
+            <div className=" hover:text-violet-600">
             <Link to="/education" >
               Education
             </Link></div>
 
-            <div class=" hover:text-violet-600">
+            <div className=" hover:text-violet-600">
             <Link to="/contact">
               Contact Us
             </Link>

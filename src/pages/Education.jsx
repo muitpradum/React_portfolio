@@ -28,6 +28,7 @@ function Education() {
           <h1 className="text-4xl font-bold text-gray-900">
             Education
           </h1>
+          <div className="w-40 h-1 bg-blue-500 mx-auto mt-1"></div>
 
           <p className=" text-gray-600 mt-3">
             My academic journey

@@ -1,4 +1,5 @@
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaLinkedin, FaGithub, } from "react-icons/fa";
+import axios from "axios";
 
 import { useState } from "react";
 
@@ -10,6 +11,7 @@ function Contact() {
       phone: "",
       message: "",
     });
+    const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -18,17 +20,32 @@ function Contact() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Thank you! Your message has been submitted.");
-    setFormData(
-      {
+    try {
+      setLoading(true);
+
+      const response = await axios.post(
+        "http://localhost:5000/api/contacts",
+        formData
+      );
+      alert("Message sent successfully");
+
+      // Clear form
+      setFormData({
         name: "",
         email: "",
         phone: "",
         message: "",
       });
+    } catch (error) {
+      console.error(error);
+      alert("Failed to send message");
+    } finally {
+      setLoading(false);
+    }
   };
+
 
   return (
     <section className=" bg-[#FFFFE0] py-6 px-6">
@@ -40,10 +57,13 @@ function Contact() {
           <h1 className="text-4xl font-bold text-gray-900">
             Contact Me
           </h1>
+          <div className="w-40 h-1 bg-blue-500 mx-auto "></div>
 
-          <p className="text-gray-600 mt-3">
+          <div className="m-5">
+            <p className="text-gray-600 mt-3">
             Feel free to contact me for opportunities or collaborations.
           </p>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-5">
@@ -208,7 +228,7 @@ function Contact() {
                            py-3 rounded-lg font-semibold
                            hover:bg-gray-700 transition"
               >
-                Send Message
+                  {loading ? "Sending..." : "Send Message"}
               </button>
 
             </form>
