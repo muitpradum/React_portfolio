@@ -26,7 +26,7 @@ function Contact() {
       setLoading(true);
 
       const response = await axios.post(
-        "http://localhost:5000/api/contacts",
+        "portfoilo-backend-two.vercel.app/api/contacts",
         formData
       );
       alert("Message sent successfully");
